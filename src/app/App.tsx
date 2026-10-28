@@ -1,30 +1,31 @@
 import React from "react";
 import "../css/app.css";
-import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import { Route, Switch } from "react-router-dom";
 
-import { Users } from "./screens/Users";
-import { About } from "./screens/about";
+import { HomePage } from "./screens/homePage/index";
+import { ProductsPage } from "./screens/productsPage";
+import { OrdersPage } from "./screens/ordersPage";
+import { UserPage } from "./screens/userPage";
 
 function App() {
   return (
     <div>
       <Switch>
-        <Route path="/about">
-          <About />
+        <Route path="/products">
+          <ProductsPage />
         </Route>
-        <Route path="/users">
-          <Users />
+        <Route path="/orders">
+          <OrdersPage />
+        </Route>
+        <Route path="/member-page">
+          <UserPage />
         </Route>
         <Route path="/">
-          <Home />
+          <HomePage />
         </Route>
       </Switch>
     </div>
   );
 }
 
-function Home() {
-  return <Container>Home</Container>;
-}
 export default App;
