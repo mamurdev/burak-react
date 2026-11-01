@@ -1,12 +1,12 @@
-import React from 'react';
-import { Box, Container, Stack } from '@mui/material';
-import Divider from '../../components/divider/index';
+import React from "react";
+import { Box, Container, Stack } from "@mui/material";
+import Divider from "../../components/divider";
 
 export default function Statistics() {
   return (
-    <div className={'static-frame'}>
+    <div className={"static-frame"}>
       <Container>
-       <Stack className="info" direction="row">
+        <Stack className="info">
           <Stack className="static-box">
             <Box className="static-num">12</Box>
             <Box className="static-text">Restaurants</Box>
