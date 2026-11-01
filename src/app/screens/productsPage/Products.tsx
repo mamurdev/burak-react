@@ -107,6 +107,7 @@ export default function Products() {
                           <img
                             src={"/icons/shopping-cart.svg"}
                             style={{ display: "flex" }}
+                            alt="shopping cart"
                           />
                         </Button>
                         <Button className={"view-btn"} sx={{ right: "36px" }}>
@@ -161,16 +162,16 @@ export default function Products() {
           <Box className={"category-title"}>Our Family Brands</Box>
           <Stack className={"brand-list"}>
             <Box className={"review-box"}>
-              <img src={"/img/gurme.png"} />
+              <img src={"/img/gurme.webp"} alt="gurme" />
             </Box>
             <Box className={"review-box"}>
-              <img src={"/img/seafood.png"} />
+              <img src={"/img/seafood.webp"} alt="seafood" />
             </Box>
             <Box className={"review-box"}>
-              <img src={"/img/doner.png"} />
+              <img src={"/img/doner.webp"} alt="doner" />
             </Box>
             <Box className={"review-box"}>
-              <img src={"/img/sweets.png"} />
+              <img src={"/img/sweets.webp"} alt="sweets" />
             </Box>
           </Stack>
         </Container>
@@ -185,6 +186,7 @@ export default function Products() {
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96326.03685561026!2d28.92022666528895!3d41.02112846139867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab82bea99445f%3A0x6ed7f4baceb4476c!2sMaiden&#39;s%20Tower!5e0!3m2!1sen!2skr!4v1757106097524!5m2!1sen!2skr"
               width="1320"
               height="500"
+              title="Our address"
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </Stack>

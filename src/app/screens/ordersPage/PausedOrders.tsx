@@ -17,13 +17,14 @@ export default function PausedOrders() {
                       <img
                         src={"/img/lavash.webp"}
                         className={"order-dish-img"}
+                        alt="dish"
                       />
                       <p className={"title-dish"}>Lavash</p>
                       <Box className={"price-box"}>
                         <p>$9</p>
-                        <img src={"/icons/close.svg"} />
+                        <img src={"/icons/close.svg"} alt="" />
                         <p>2</p>
-                        <img src={"/icons/pause.svg"} />
+                        <img src={"/icons/pause.svg"} alt="" />
                         <p style={{ marginLeft: "15px" }}>$24</p>
                       </Box>
                     </Box>
@@ -35,12 +36,13 @@ export default function PausedOrders() {
                 <Box className={"box-total"}>
                   <p>Product price</p>
                   <p>$18</p>
-                  <img src={"/icons/plus.svg"} style={{ marginLeft: "20px" }} />
+                  <img src={"/icons/plus.svg"} style={{ marginLeft: "20px" }} alt="" />
                   <p>Delivery cost</p>
                   <p>$2</p>
                   <img
                     src={"/icons/pause.svg"}
                     style={{ marginLeft: "20px" }}
+                    alt=""
                   />
                   <p>Total</p>
                   <p>$20</p>
@@ -65,6 +67,7 @@ export default function PausedOrders() {
             <img
               src={"/icons/noimage-list.svg"}
               style={{ width: 300, height: 300 }}
+              alt="no orders"
             />
           </Box>
         )}

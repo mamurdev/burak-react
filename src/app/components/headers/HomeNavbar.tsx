@@ -11,7 +11,11 @@ export default function HomeNavbar() {
         <Stack className="menu">
           <Box>
             <NavLink to="/">
-              <img className="brand-logo" src="/icons/bumarak.svg" />
+              <img
+                className="brand-logo"
+                src="/icons/bumarak.svg"
+                alt="logo"
+              />
             </NavLink>
           </Box>
           <Stack className="links">
@@ -56,7 +60,7 @@ export default function HomeNavbar() {
               <img
                 className="user-avatar"
                 src={"/icons/default-user.svg"}
-                aria-haspopup={"true"}
+                alt="avatar"
               />
             )}
           </Stack>

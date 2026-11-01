@@ -5,12 +5,7 @@ import Badge from "@mui/material/Badge";
 import Menu from "@mui/material/Menu";
 import CancelIcon from "@mui/icons-material/Cancel";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { useHistory } from "react-router-dom";
-
 export default function Basket() {
-  const authMember = null;
-  const history = useHistory();
-
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
@@ -34,7 +29,7 @@ export default function Basket() {
         onClick={handleClick}
       >
         <Badge badgeContent={3} color="secondary">
-          <img src={"/icons/shopping-cart.svg"} />
+          <img src={"/icons/shopping-cart.svg"} alt="cart" />
         </Badge>
       </IconButton>
       <Menu
@@ -83,7 +78,7 @@ export default function Basket() {
                 <div className={"cancel-btn"}>
                   <CancelIcon color={"primary"} />
                 </div>
-                <img src={"/img/fresh.webp"} className={"product-img"} />
+                <img src={"/img/fresh.webp"} className={"product-img"} alt="fresh" />
                 <span className={"product-name"}>Kebab</span>
                 <p className={"product-price"}>$10 x 1</p>
                 <Box sx={{ minWidth: 120 }}>

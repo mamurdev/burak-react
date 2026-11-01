@@ -16,13 +16,14 @@ export default function FinishedOrders() {
                       <img
                         src={"/img/kebab-fresh.webp"}
                         className={"order-dish-img"}
+                        alt="dish"
                       />
                       <p className={"title-dish"}>Kebab</p>
                       <Box className={"price-box"}>
                         <p>$12</p>
-                        <img src={"/icons/close.svg"} />
+                        <img src={"/icons/close.svg"} alt="" />
                         <p>2</p>
-                        <img src={"/icons/pause.svg"} />
+                        <img src={"/icons/pause.svg"} alt="" />
                         <p style={{ marginLeft: "15px" }}>$24</p>
                       </Box>
                     </Box>
@@ -34,12 +35,13 @@ export default function FinishedOrders() {
                 <Box className={"box-total"}>
                   <p>Product price</p>
                   <p>$24</p>
-                  <img src={"/icons/plus.svg"} style={{ marginLeft: "20px" }} />
+                  <img src={"/icons/plus.svg"} style={{ marginLeft: "20px" }} alt="" />
                   <p>Delivery cost</p>
                   <p>$2</p>
                   <img
                     src={"/icons/pause.svg"}
                     style={{ marginLeft: "20px" }}
+                    alt=""
                   />
                   <p>Total</p>
                   <p>$26</p>
@@ -54,6 +56,7 @@ export default function FinishedOrders() {
             <img
               src={"/icons/noimage-list.svg"}
               style={{ width: 300, height: 300 }}
+              alt="no orders"
             />
           </Box>
         )}
