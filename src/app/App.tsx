@@ -10,6 +10,7 @@ import HelpPage from "./screens/helpPage";
 import "../css/app.css";
 import "../css/navbar.css";
 import "../css/footer.css";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Test from "./screens/Test";
 
 function App() {
@@ -32,8 +33,8 @@ function App() {
           <HelpPage />
         </Route>
         <Route path="/">
-          <Test />
-          {/* <HomePage /> */}
+          {/* <Test /> */}
+          <HomePage />
         </Route>
       </Switch>
       <Footer />
