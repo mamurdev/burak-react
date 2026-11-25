@@ -12,39 +12,39 @@ import "../css/navbar.css";
 import "../css/footer.css";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Test from "./screens/Test";
-import { CartItem } from "../lib/types/search";
 import { useState } from "react";
+import useBasket from "./hooks/useBasket";
+import AuthenticationModal from "./components/auth";
 
 function App() {
   const location = useLocation();
-
-  const cartJson: string | null = localStorage.getItem("cartData");
-  const currentCart = cartJson ? JSON.parse(cartJson) : [];
-  const [cartItems, setCartItems] = useState<CartItem[]>(currentCart);
+  const { cartItems, onAdd, onRemove, onDelete, onDeleteAll } = useBasket();
+  const [signUpOpen, setSignUpOpen] = useState<boolean>(false);
+  const [loginOpen, setLoginOpen] = useState<boolean>(false);
 
   /** HANDLERS **/
-  const onAdd = (input: CartItem) => {
-    const exist: any = cartItems.find(
-      (item: CartItem) => item._id === input._id,
-    );
-    if (exist) {
-      const cartUpdate = cartItems.map((item: CartItem) =>
-        item._id === input._id
-          ? { ...exist, quantity: exist.quantity + 1 }
-          : item,
-      );
-      setCartItems(cartUpdate);
-      localStorage.setItem("cartData", JSON.stringify(cartUpdate));
-    } else {
-      const cartUpdate = [...cartItems, { ...input }];
-      setCartItems(cartUpdate);
-      localStorage.setItem("cartData", JSON.stringify(cartUpdate));
-    }
-  };
+  const handleSignupClose = () => setSignUpOpen(false);
+  const handleLoginClose = () => setLoginOpen(false);
 
   return (
     <>
-      {location.pathname === "/" ? <HomeNavbar cartItems={cartItems}/> : <OtherNavbar cartItems={cartItems} />}
+      {location.pathname === "/" ? (
+        <HomeNavbar
+          cartItems={cartItems}
+          onAdd={onAdd}
+          onRemove={onRemove}
+          onDelete={onDelete}
+          onDeleteAll={onDeleteAll}
+        />
+      ) : (
+        <OtherNavbar
+          cartItems={cartItems}
+          onAdd={onAdd}
+          onRemove={onRemove}
+          onDelete={onDelete}
+          onDeleteAll={onDeleteAll}
+        />
+      )}
       <Switch>
         <Route path="/products">
           <ProductsPage onAdd={onAdd}/>
@@ -64,6 +64,12 @@ function App() {
         </Route>
       </Switch>
       <Footer />
+      <AuthenticationModal
+        signupOpen={signUpOpen}
+        loginOpen={loginOpen}
+        handleSignupClose={handleSignupClose}
+        handleLoginClose={handleLoginClose}
+      />
     </>
   );
 }
